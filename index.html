@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Last Bell</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f1720;
+      color:#f5f5f5;
+      font-family:'Cormorant Garamond', serif;
+      overflow-x:hidden;
+    }
+
+    section{
+      min-height:100vh;
+      padding:100px 10%;
+      position:relative;
+    }
+
+    /* HERO */
+
+    .hero{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.7)),
+      url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1974&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero h1{
+      font-size:5rem;
+      letter-spacing:3px;
+      margin-bottom:20px;
+      animation:fadeUp 2s ease;
+    }
+
+    .hero p{
+      font-size:1.7rem;
+      width:70%;
+      line-height:1.7;
+      opacity:.9;
+      animation:fadeUp 3s ease;
+    }
+
+    .scroll{
+      position:absolute;
+      bottom:40px;
+      font-size:1rem;
+      opacity:.7;
+      animation:float 2s infinite;
+    }
+
+    /* MEMORY */
+
+    .memory{
+      display:flex;
+      align-items:center;
+      gap:60px;
+      margin-bottom:120px;
+      flex-wrap:wrap;
+    }
+
+    .memory img{
+      width:420px;
+      max-width:100%;
+      border-radius:18px;
+      transform:rotate(-2deg);
+      box-shadow:0 10px 40px rgba(0,0,0,.45);
+      transition:.5s;
+    }
+
+    .memory img:hover{
+      transform:scale(1.03) rotate(0deg);
+    }
+
+    .memory-text{
+      flex:1;
+      min-width:280px;
+    }
+
+    .memory-text h2{
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .memory-text p{
+      font-size:1.4rem;
+      line-height:1.8;
+      opacity:.9;
+    }
+
+    /* LETTER */
+
+    .letter-section{
+      text-align:center;
+      background:#111927;
+    }
+
+    .letter-title{
+      font-size:4rem;
+      margin-bottom:50px;
+    }
+
+    .letter{
+      background:#f5efe6;
+      color:#222;
+      max-width:800px;
+      margin:auto;
+      padding:50px;
+      border-radius:20px;
+      box-shadow:0 15px 40px rgba(0,0,0,.4);
+      text-align:left;
+      transform:rotate(-1deg);
+    }
+
+    .letter h3{
+      font-size:2.5rem;
+      margin-bottom:25px;
+      font-family:'Caveat', cursive;
+    }
+
+    .letter p{
+      font-size:1.5rem;
+      line-height:2;
+    }
+
+    .signature{
+      margin-top:40px;
+      font-family:'Caveat', cursive;
+      font-size:2rem;
+    }
+
+    /* ENDING */
+
+    .ending{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      background:
+      linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.8)),
+      url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .ending h2{
+      font-size:4rem;
+      margin-bottom:30px;
+    }
+
+    .ending p{
+      font-size:1.7rem;
+      width:70%;
+      line-height:1.8;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0);}
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .hero p,
+      .ending p{
+        width:100%;
+        font-size:1.3rem;
+      }
+
+      .memory{
+        flex-direction:column;
+      }
+
+      .memory-text h2{
+        font-size:2.2rem;
+      }
+
+      .letter{
+        padding:30px;
+      }
+
+      .letter p{
+        font-size:1.25rem;
+      }
+
+      .ending h2{
+        font-size:2.5rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <h1>THE LAST BELL</h1>
+
+    <p>
+      Mới ngày nào còn bỡ ngỡ bước vào lớp học ấy,
+      vậy mà giờ đây chúng ta đã sắp trở thành ký ức của nhau.
+    </p>
+
+    <div class="scroll">
+      scroll down ↓
+    </div>
+  </section>
+
+  <!-- MEMORIES -->
+
+  <section>
+
+    <div class="memory">
+
+      <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1974&auto=format&fit=crop">
+
+      <div class="memory-text">
+        <h2>Những ngày đầu tiên</h2>
+
+        <p>
+          Ngày đó chẳng ai thật sự quen ai.
+          Chúng ta chỉ là những con người vô tình ngồi chung một lớp học.
+          Không ai biết rồi sẽ có những mối quan hệ
+          trở thành một phần thanh xuân của mình.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="memory">
+
+      <div class="memory-text">
+        <h2>Những ngày đáng nhớ nhất</h2>
+
+        <p>
+          Những buổi ngủ gật vì học thêm,
+          những lần cười không kiểm soát trong giờ,
+          những trận bóng dưới trời chiều,
+          những ngày tưởng chừng áp lực đến nghẹt thở...
+          cuối cùng đều trở thành điều khiến ta nhớ nhất.
+        </p>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1974&auto=format&fit=crop">
+
+    </div>
+
+  </section>
+
+  <!-- LETTER -->
+
+  <section class="letter-section">
+
+    <h2 class="letter-title">
+      A Letter To My Class
+    </h2>
+
+    <div class="letter">
+
+      <h3>Dear 12A,</h3>
+
+      <p>
+        Cảm ơn vì đã xuất hiện trong những năm tháng đẹp nhất của tuổi trẻ.
+        Cảm ơn vì những lần cùng nhau trưởng thành,
+        cùng nhau áp lực,
+        cùng nhau vui đến mức quên cả thời gian.
+        <br><br>
+
+        Sau này có thể chúng ta sẽ đi rất xa,
+        gặp những con người mới,
+        sống những cuộc sống hoàn toàn khác.
+        Nhưng mình tin rằng,
+        sẽ luôn có một ngày nào đó,
+        khi vô tình nghe tiếng trống trường,
+        chúng ta lại nhớ về nơi này.
+        <br><br>
+
+        Và nhận ra rằng:
+        chúng ta đã từng có một thanh xuân thật đẹp.
+      </p>
+
+      <div class="signature">
+        — 12A Forever
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ENDING -->
+
+  <section class="ending">
+
+    <h2>Thank You.</h2>
+
+    <p>
+      Một ngày nào đó,
+      chúng ta sẽ mở lại trang web này,
+      nhìn lại những bức ảnh cũ,
+      và nhận ra:
+      hóa ra khi ấy,
+      mình đang sống trong những ngày đẹp nhất cuộc đời.
+    </p>
+
+  </section>
+
+</body>
+</html>
