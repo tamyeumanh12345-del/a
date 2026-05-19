@@ -4,4 +4,5 @@ memory-web
 ├── style.css
 ├── script.js
 └── music.mp3
-└── 1.jfif
+└── images
+    └── 1.jfif
