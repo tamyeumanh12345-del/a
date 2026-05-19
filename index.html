@@ -27,8 +27,8 @@
 
 .envelope-wrapper{
   position:relative;
-  width:550px;
-  height:360px;
+  width:750px;
+  height:500px;
   cursor:pointer;
 }
 
@@ -81,19 +81,20 @@
 
   position:absolute;
 
-  width:400px;
-  height:220px;
+  width:560px;
+  height:320px;
 
   background:white;
 
   left:50%;
-  bottom:-280px;
+
+  bottom:-360px;
 
   transform:translateX(-50%);
 
-  border-radius:20px;
+  border-radius:25px;
 
-  padding:30px;
+  padding:45px;
 
   transition:1s ease;
 
@@ -101,7 +102,7 @@
 
   overflow:hidden;
 
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
 }
 
 /* OPEN */
@@ -112,7 +113,7 @@
 
 .envelope-wrapper.open .letter-paper{
 
-  bottom:40px;
+  bottom:120px;
 
   transform:translateX(-50%);
 }
@@ -120,15 +121,15 @@
 /* TEXT */
 
 .letter-paper h3{
-  font-size:2rem;
+  font-size:3rem;
   color:#ff6da9;
   margin-bottom:15px;
   font-family:'Pacifico', cursive;
 }
 
 .letter-paper p{
-  font-size:1rem;
-  line-height:1.8;
+  font-size:1.3rem;
+  line-height:2;
   color:#555;
 }
 
@@ -136,7 +137,7 @@
   display:block;
   margin-top:15px;
   color:#ff6da9;
-  font-size:1.3rem;
+  font-size:1.8rem;
   font-family:'Pacifico', cursive;
 }
 
