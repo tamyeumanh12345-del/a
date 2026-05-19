@@ -62,23 +62,23 @@
 
   position:absolute;
 
-  width:90%;
-  height:190px;
+  width:88%;
+  height:140px;
 
   background:white;
 
-  left:5%;
-  bottom:0;
+  left:6%;
+  top:40px;
 
   border-radius:15px;
 
-  padding:20px;
+  padding:18px;
 
   transition:1s;
 
   z-index:2;
 
-  overflow:auto;
+  overflow:hidden;
 }
 
 .letter-paper h3{
@@ -107,7 +107,7 @@
 }
 
 .envelope-wrapper.open .letter-paper{
-  transform:translateY(-120px);
+  transform:translateY(-90px);
 }
 
 /* TEXT */
@@ -270,6 +270,13 @@
     }
 
     /* LETTER */
+    .letter-paper h3{
+      font-size:1.5rem;
+    }
+    .letter-paper p{
+      font-size:0.95rem;
+      line-height:1.6;
+    }
 
     .letter{
 
@@ -288,6 +295,7 @@
 
       position:relative;
     }
+    
 
     .letter::before{
       content:"💌";
