@@ -19,30 +19,27 @@
   padding:140px 0;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
-  text-align:center;
+  justify-content:center;
 }
 
 /* WRAPPER */
 
 .envelope-wrapper{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  position:relative;
+  width:550px;
+  height:360px;
   cursor:pointer;
-  perspective:1200px;
 }
 
 /* ENVELOPE */
 
 .envelope{
 
-  position:relative;
+  position:absolute;
 
-  width:550px;
-  height:360px;
+  width:100%;
+  height:100%;
 
   background:#ffb6cf;
 
@@ -53,7 +50,7 @@
   box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
-/* TOP FLAP */
+/* TOP */
 
 .envelope::before{
 
@@ -71,33 +68,32 @@
 
   clip-path:polygon(0 0,50% 52%,100% 0);
 
-  transform-origin:top;
+  transform-origin:top center;
 
   transition:1s ease;
 
   z-index:5;
 }
 
-/* LETTER PAPER */
+/* LETTER */
 
 .letter-paper{
 
   position:absolute;
 
   width:400px;
-  height:210px;
+  height:220px;
 
   background:white;
 
   left:50%;
+  bottom:-220px;
 
-  bottom:-230px;
+  transform:translateX(-50%);
 
-  transform:translate(-50%, 0);
+  border-radius:20px;
 
-  border-radius:18px;
-
-  padding:28px;
+  padding:30px;
 
   transition:1s ease;
 
@@ -105,74 +101,81 @@
 
   overflow:hidden;
 
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-/* OPEN EFFECT */
+/* OPEN */
 
 .envelope-wrapper.open .envelope::before{
   transform:rotateX(180deg);
 }
 
 .envelope-wrapper.open .letter-paper{
-  transform:translateY(-230px);
+
+  bottom:120px;
+
+  transform:translateX(-50%);
 }
 
 /* TEXT */
 
 .letter-paper h3{
+  font-size:2rem;
   color:#ff6da9;
+  margin-bottom:15px;
   font-family:'Pacifico', cursive;
-  font-size:2.5rem;
-  margin-bottom:20px;
 }
 
 .letter-paper p{
-  font-size:1.2rem;
-  line-height:1.9;
+  font-size:1rem;
+  line-height:1.8;
   color:#555;
 }
 
 .letter-paper span{
   display:block;
-  margin-top:20px;
+  margin-top:15px;
   color:#ff6da9;
+  font-size:1.3rem;
   font-family:'Pacifico', cursive;
-  font-size:1.5rem;
 }
 
-/* CLICK TEXT */
+/* CLICK */
 
 .click-text{
-  margin-top:30px;
+  position:absolute;
+  bottom:-45px;
+  width:100%;
+  text-align:center;
   color:#ff6da9;
-  font-size:1.2rem;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-  .envelope{
+  .envelope-wrapper{
     width:330px;
-    height:240px;
+    height:230px;
   }
 
   .letter-paper{
-    height:180px;
-    padding:20px;
+    width:250px;
+    height:160px;
+    padding:18px;
+    bottom:-170px;
   }
 
   .envelope-wrapper.open .letter-paper{
-    transform:translate(-50%, -240px);
+    bottom:70px;
   }
 
   .letter-paper h3{
-    font-size:1.7rem;
+    font-size:1.3rem;
   }
 
   .letter-paper p{
-    font-size:.95rem;
+    font-size:.8rem;
   }
 
 }
