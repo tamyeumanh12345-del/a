@@ -759,7 +759,7 @@
 
 const music = document.getElementById("music");
 
-music.volume = 0.15;
+music.volume = 0.05;
 
 const intro =
 document.getElementById("intro");
@@ -806,36 +806,6 @@ setInterval(() => {
 }, 500);
 
 </script>
-
-
-    /* HEART EFFECT */
-
-    setInterval(() => {
-
-      const heart = document.createElement("div");
-
-      heart.classList.add("heart");
-
-      heart.innerHTML = "❤";
-
-      heart.style.left =
-      Math.random() * 100 + "vw";
-
-      heart.style.fontSize =
-      Math.random() * 20 + 15 + "px";
-
-      heart.style.animationDuration =
-      Math.random() * 3 + 4 + "s";
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-
-    }, 500);
-
-  </script>
 <script>
 
 function openLetter(){
