@@ -231,7 +231,200 @@
 </head>
 
 <body>
+<!-- THÊM ĐOẠN NÀY NGAY SAU <body> -->
 
+<div class="stars"></div>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- THÊM NÚT NHẠC -->
+
+<button class="music-btn" onclick="toggleMusic()">
+  🎵
+</button>
+
+<!-- THÊM ĐOẠN NÀY VÀO CSS -->
+
+<style>
+
+/* BACKGROUND STARS */
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-image:
+  radial-gradient(white 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:0.12;
+  z-index:-1;
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:60px;
+  height:60px;
+  border:none;
+  border-radius:50%;
+  background:#ffffff20;
+  backdrop-filter:blur(10px);
+  color:white;
+  font-size:1.5rem;
+  cursor:pointer;
+  transition:.3s;
+  z-index:999;
+}
+
+.music-btn:hover{
+  transform:scale(1.1);
+  background:#ffffff35;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+  position:fixed;
+  color:#ffb6c1;
+  animation:floatHeart linear forwards;
+  pointer-events:none;
+  z-index:999;
+}
+
+@keyframes floatHeart{
+  from{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+
+  to{
+    transform:translateY(-100vh) scale(1.8);
+    opacity:0;
+  }
+}
+
+/* POLAROID STYLE */
+
+.memory img{
+  border:10px solid white;
+  border-bottom:40px solid white;
+  background:white;
+}
+
+/* GLASS EFFECT */
+
+.letter{
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(10px);
+}
+
+/* CUTE GLOW */
+
+.hero h1,
+.ending h2{
+  text-shadow:
+  0 0 10px rgba(255,255,255,.4),
+  0 0 20px rgba(255,255,255,.2);
+}
+
+/* SPARKLE */
+
+.sparkle{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:white;
+  animation:sparkle 2s infinite;
+}
+
+@keyframes sparkle{
+  0%{
+    opacity:0;
+    transform:scale(0);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  100%{
+    opacity:0;
+    transform:scale(0);
+  }
+}
+
+</style>
+
+<!-- THÊM ĐOẠN NÀY TRƯỚC </body> -->
+
+<script>
+
+const audio = document.querySelector("audio");
+
+function toggleMusic(){
+  if(audio.paused){
+    audio.play();
+  }else{
+    audio.pause();
+  }
+}
+
+/* FLOATING HEARTS */
+
+setInterval(() => {
+
+  const heart = document.createElement("div");
+
+  heart.classList.add("heart");
+
+  heart.innerHTML = "❤";
+
+  heart.style.left = Math.random() * window.innerWidth + "px";
+
+  heart.style.fontSize =
+  Math.random() * 20 + 15 + "px";
+
+  heart.style.animationDuration =
+  Math.random() * 3 + 3 + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+
+}, 700);
+
+/* RANDOM SPARKLES */
+
+for(let i = 0; i < 30; i++){
+
+  const sparkle = document.createElement("div");
+
+  sparkle.classList.add("sparkle");
+
+  sparkle.style.top =
+  Math.random() * 100 + "%";
+
+  sparkle.style.left =
+  Math.random() * 100 + "%";
+
+  sparkle.style.animationDelay =
+  Math.random() * 2 + "s";
+
+  document.body.appendChild(sparkle);
+}
+
+</script>
   <!-- HERO -->
 
   <section class="hero">
