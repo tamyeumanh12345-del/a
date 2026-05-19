@@ -480,22 +480,88 @@
       }
 
     }
+    /* INTRO SCREEN */
 
+#intro{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100vh;
+
+  background:linear-gradient(to bottom,#ffdce8,#fff3f7,#edf8ff);
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:99999;
+
+  transition:1.5s ease;
+}
+
+.intro-content{
+  text-align:center;
+}
+
+.intro-content h1{
+
+  font-size:5rem;
+
+  color:#ff6da9;
+
+  font-family:'Pacifico', cursive;
+
+  margin-bottom:20px;
+}
+
+.intro-content p{
+
+  font-size:1.3rem;
+
+  color:#666;
+
+  animation:blink 2s infinite;
+}
+
+@keyframes blink{
+
+  0%,100%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.3;
+  }
+
+}
   </style>
 
 </head>
 
 <body>
+  <div id="intro">
+
+  <div class="intro-content">
+
+    <h1>Our Youth ✨</h1>
+
+    <p>
+      click anywhere to enter
+    </p>
+
+  </div>
+
+</div>
   <!-- MUSIC -->
 
   <audio id="music" loop>
     <source src="có hẹn với thanh xuân.mp3" type="audio/mpeg">
   </audio>
-
-  <button class="music-btn" onclick="toggleMusic()">
-    🎵
-  </button>
-
   <!-- HERO -->
 
   <section class="hero">
@@ -691,21 +757,56 @@
 
   <script>
 
-    /* MUSIC */
+const music = document.getElementById("music");
 
-    const music = document.getElementById("music");
-    
-    music.volume = 0.05;
+music.volume = 0.15;
 
-    function toggleMusic(){
+const intro =
+document.getElementById("intro");
 
-      if(music.paused){
-        music.play();
-      }else{
-        music.pause();
-      }
+intro.addEventListener("click", () => {
 
-    }
+  music.play();
+
+  intro.style.opacity = "0";
+
+  setTimeout(() => {
+
+    intro.style.display = "none";
+
+  }, 1500);
+
+});
+
+/* HEART EFFECT */
+
+setInterval(() => {
+
+  const heart = document.createElement("div");
+
+  heart.classList.add("heart");
+
+  heart.innerHTML = "❤";
+
+  heart.style.left =
+  Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+  Math.random() * 20 + 15 + "px";
+
+  heart.style.animationDuration =
+  Math.random() * 3 + 4 + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+
+}, 500);
+
+</script>
+
 
     /* HEART EFFECT */
 
